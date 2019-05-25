@@ -1,6 +1,68 @@
-div {
-    color:rgb(0, 255, 0);
-    width: 5000px;
-    height: 5000px;
-    background-color: rgb(255, 0, 0);
+/* CSS：层叠样式表 
+html+css 内容 JavaScript 灵魂
+html:结构
+css：样子*/
+/* 语法
+/* css组成部分：
+div(选择器)
+{color: chartreuse;}（声明） */
+/*注释*/
+
+/* 颜色 rgb:
+R：红色 浅-深 0-255
+G：绿色
+B：蓝色 
+1.rgb(0,255,0)
+2.名称：red
+3.16进制 #FF0000 */ 
+
+/* 选择器
+div{
+    background-color: rgb(255, 0, 0)
+}
+作用：通过选择器选择html元素  样式-》元素
+类别：
+1.基本选择器 2.组合选择器 3.属性选择器 4.伪元素
+
+1.基本选择器
+*通配符 标签选择器（div  p） id选择器 class选择器 */
+
+/* *{
+    border: 1px solid black;
+} */
+
+/* div{
+    border: 1px solid black;
+}
+p{
+    border: 1px solid black;
+} */
+
+/* id选择器 */
+/* #wc {
+    font-size: 100px;
+    color: aqua;
+} */
+/* *#wc{
+    color: blue;
+    font-size: 200px
+}(通配符+#) */
+
+/* 编程：
+id ->唯一性 -》人的身份证号码
+1.每个人：有且仅有一个号码
+2.人和人之间号码不一样
+
+css 1.一个号码 元素-只能有一个id
+2.人和人号码不一样 
+元素 id不能相同 */
+
+/* class选择器 */
+.wc{
+    font-size: 200px
+}
+.wc{color: coral
+}
+div{
+    font-size: 200px;
 }
