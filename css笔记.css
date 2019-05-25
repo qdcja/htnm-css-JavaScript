@@ -58,11 +58,143 @@ css 1.一个号码 元素-只能有一个id
 元素 id不能相同 */
 
 /* class选择器 */
-.wc{
+/* .wc{
     font-size: 200px
 }
 .wc{color: coral
+} */
+
+/* class->css
+id->js */
+
+/* 原理：
+1.优先原则：后解析的内容 会覆盖掉之前解析的内容 
+2.继承原则：嵌套里面的标签 会拥有外部标签的某些样式
+            子元素可以继承父元素的属性 */
+
+/* 继承原则
+1.跟文本、文字样式 可以被继承 */
+
+/* div.txt{
+    color: red; 文字的颜色
+    border: 1px solid black;
+}
+p{
+    border: 1px solid black;
+} */
+
+/* 2.块级元素 宽度如果不被设置-》继承父元素宽
+     高-》由内容决定 */
+div.txt{
+    width: 200px;
+    height: 200px;
+}
+
+div,p{
+    border: 1px solid black;
+}
+
+/* 优先原则
+1.同一个选择器P:文件执行从上往下执行，解析
+2.同一类型的选择器：从上往下执行，解析
+3.不同类型的选择器：优先级
+先解析低优先级-》高优先级：*--< div--< class--< id （精确性）
+4.外部样式 内部样式 合并之后一起解析
+先外部样式-->内部样式
+5.内联样式：
+外部+内部样式解析完了之后，才解析内联样式
+6.加了important字段样式最后解析 */
+
+/* 优先原则：-》选择器
+1.同一个选择器:文件执行从上往下执行，解析 */
+/* div{
+    color: aqua;
+    color: blue;
+} */
+
+/* <div>div1</div>-》样子 解析
+color:aqua ---color:blue  */
+
+/* 2.同一类型的选择器：从上往下执行，解析 */
+
+/* div{
+    background-color: red;
+}
+div{background-color: aqua;
+    }
+<div>div1</div> background-color:red --background-color:auqa
+
+.bg1{
+    background-color: chartreuse
+}
+.bg2{
+    background-color: coral;
+}
+bg1---bg2（和右边有关） */
+
+/* 3.不同类型的选择器：选择器本身的优先级
+先解析低优先级的-》高优先级 =》先低后高 */
+/* *--< div--< class--< id （精确性） */
+
+/* div{
+    background-color: red;
+}
+.bg1{
+    background-color: green;
+} */
+/* 先red-->green */
+
+/* 4.外部样式 内部样式  合并之后一起解析
+先外部样式-》内部样式 ->合并-解析 */
+/* div{
+    background-color: yellow;
+    font-size: 100px;
+    } */
+
+/* 1，合并
+div{
+    background-color: yellow;
+    font-size: 100px;
+    }
+    div{
+        background-color: red;
+        }
+<div class="bg1">div1</div>
+--》<div class="bg1">div1</div>
+   background-color: red;
+   font-size: 100px; */
+
+/* 5.内联样式：
+外部样式+内部样式之后才解析内联样式 */
+/* 外部样式：
+div{
+    background-color: yellow;
+    font-size: 10px;
+    } */
+/* 内部样式：
+div{
+    background-color: red;
+    } */
+
+/* 合并：
+div{
+    background-color: yellow;
+    font-size: 10px;
+    }
+
+div{
+    background-color: red;
+    }
+
+(内联样式)<div class="bg1" style="font-size: 200px">div1</div>
+background-color: yellow;--red ;
+font-size: 10px;--200px; */
+
+
+/* 6.加了important字段的，最后执行 */
+/* div{
+    background-color: green!important;
 }
 div{
-    font-size: 200px;
-}
+    background-color: yellow;
+    font-size: 30px;} */
