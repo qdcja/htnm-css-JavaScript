@@ -85,14 +85,14 @@ p{
 
 /* 2.块级元素 宽度如果不被设置-》继承父元素宽
      高-》由内容决定 */
-div.txt{
+/* div.txt{
     width: 200px;
     height: 200px;
 }
 
 div,p{
     border: 1px solid black;
-}
+} */
 
 /* 优先原则
 1.同一个选择器P:文件执行从上往下执行，解析
@@ -198,3 +198,179 @@ font-size: 10px;--200px; */
 div{
     background-color: yellow;
     font-size: 30px;} */
+
+/* 组合选择器：把基本选择器通过特殊符号串在一起 */
+
+/* 分组选择器 div,p,ul */
+/* div,p{
+    background-color: blue;
+    color: red;
+}
+p{
+    font-size: 30px;
+} */
+
+/* 嵌套选择器
+把多个标签用空格隔开
+div p ->p（div）只要p标签在div里面 就能生效
+div p{
+    background-color: blue;
+    color: red;
+    font-size: 20px;
+} */
+
+/* 子选择器：
+div > p  p(父标签必须是div)
+div>p{
+    background-color: blue;
+    color: red;
+    font-size: 20px;
+}  */
+
+/* 相邻同级选择器：
+div+p->p( div)
+div+p{
+    background-color: blue;
+    color: red;
+    font-size: 20px;
+} */
+
+
+/* 属性选择器
+基本选择器
+[属性=值]
+[属性~=值]空格隔开
+[属性^=值]以某某开始
+[属性$=值]以某某结束
+*/
+
+/* p[title$=cc]{
+    background-color: blue;
+    color: red;
+    font-size: 20px;
+} */
+
+
+/* 伪元素选择器
+伪元素:假的->真的(我们自己写的) */
+/* 开始:before
+结束:after */
+
+/* p::before {
+    content: "before";
+}
+p::after {
+    content: "after";
+}
+p{
+    background-color: aqua;
+    font-size: 50px;
+    color: blue;
+} */
+
+/* 块元素
+第一个字母: :first-letter
+第一行: :first-line */
+
+/* p::first-letter{
+    color: aqua;
+    font-size: 50px;
+}
+p::first-line{
+    color: aqua;
+    font-size: 100px;
+} */
+
+/* 伪类 选择器
+    状态 */
+
+    /* 背景
+body{
+    background-color: red;
+    background-image: url('one.jpg');
+    background-repeat: no-repeat;  
+    (平铺,沿着某某轴)
+    background-attachment: fixed;
+    fixed(固定)
+    background-position:center top;
+     x:left center right  posittion(位置)
+    y:top  center bottom
+    height: 2000px;
+    background: color image repeat attachment  position 
+} */
+
+/* body{ */
+    /* font-family: "微软雅黑","Microsoft yahei";
+    font-size: 30px; 
+    font-weight: normal;
+    normal  lighter  bold (自己宽度)
+    font-style: italic;
+    (italic 斜体)
+    font: style weight size/line-height font-family
+    font:至少设置size 和font family */
+    /* font: italic 30px/150px "微软雅黑";  */
+    /* 系统默认16px=1em  1.5em=1.5*16 */
+/* }
+p{
+    width: 200px;
+} */
+
+
+
+    /* color: red */
+    /* 字符间距 */
+    /* letter-spacing: 0px */
+    /* 空格的间距 */
+    /* word-spacing: 0px; */
+
+    /* direction: ltr; left->to->right */
+    /* text-decoration: line-through; */
+
+    /* 文字的对齐方式 center left right justify */
+    /* text-align:left; */
+
+    /* 缩进  */
+    /* text-indent:50px; */
+
+
+    /* 英文大小写字母
+    text-transform:upercase;
+                   lowercase;
+                   capitalize; */
+    /* text-transform: uppercase; */
+
+    /* 省略号:wihite-space:nowrap;
+    overflow:hidden; nowrap(包裹);overflow(隐藏)
+    text-overflow:ellipsis ;
+clip(默认状态) ellipsis(省略号) */
+    
+    /* width: 250px;
+    white-space: nowrap;   
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: aqua; */
+
+
+    /* word-spacing: 10px;
+    direction: rtl; */
+    /* text-decoration:overline; */
+    /* text-align: justify; */
+    /* text-transform: lowercase; */
+
+    /* letter-spacing: -5px; */
+    /* word-spacing: -10px; */
+    /* text-decoration: underline; */
+    /* text-align: right; */
+    /* text-transform: capitalize; */
+p{
+    background-color: aqua;
+    width: 300px;
+}
+    img{
+        width: 250px;
+        /* vertical-align: top */
+        /* 垂直对齐
+        vertical-align:top center bottom
+        100%->1个行高 */
+        float: left;
+    }
